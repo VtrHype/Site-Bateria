@@ -1,0 +1,855 @@
+
+* {       
+    font-family: gotham, arial, helvetica, sans-serif;
+    font-size: 16px;
+    padding: 0;
+    margin: 0 ;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.container {
+    width: 100%;
+    max-width: 100vw; /* Limita a largura máxima do conteúdo interno */
+    margin: 0 auto;
+    padding: 0; /* Removido o padding para evitar espaços extras */
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+}
+
+header {
+    background-color: #fff;
+    background-image: linear-gradient(to right, #ffffff, #090de0d0, #010368, #010368);
+    padding: 13px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex; /* Adiciona flexbox para alinhar os itens */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 100%; /* Ajusta o tamanho da logo para ser responsiva */
+    max-width: 240px; /* Limita o tamanho máximo da logo */
+    height: auto;
+    margin-top: -5px;
+}
+
+
+
+
+/*------menu header---------*/
+.menu {
+    text-align: center;
+    margin-top: 0;
+    margin-right: 30%;   
+    
+}
+
+.menu-toggle {
+    display: none; /* Esconde o ícone do hamburguer menu por padrão */
+    cursor: pointer;
+}
+
+.menu-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-list li {
+    display: inline;
+}
+
+.menu-list li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Estilos para os links ao passar o mouse */
+.menu li a:hover {     
+    color: #ffff;
+    font-variant-caps: unicase;
+    text-shadow: 7px 7px 14px rgb(255, 255, 255);    
+}
+/* Estilos para responsividade */
+@media screen and (max-width: 768px) {
+    .menu-list {
+        display: none; /* Esconde a lista em telas menores */
+        flex-direction: column; /* Altera para layout de coluna */
+        position: absolute;
+        top: 100%; /* Coloca o menu abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+    }
+    .menu-toggle {
+        display: block; /* Mostra o ícone do hamburguer menu */
+        color: #fff;
+        font-size: 20px;
+        padding: 10px;
+    }
+    .menu-toggle:hover {
+        background-color: #555;
+    }
+    .menu-toggle.active + .menu-list {
+        display: block; /* Mostra a lista quando o ícone é clicado */
+    }
+}
+
+
+
+/*------icone rede social---------*/
+
+.social-links a img {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px; /* Adiciona espaçamento entre os ícones sociais */
+}
+
+.social-links {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 55px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-left: 5px;
+}
+@media screen and (max-width: 768px) {
+    .social-links a img {
+        width: 20px; /* Reduz o tamanho dos ícones sociais em telas menores */
+        height: 20px;
+    }
+}
+/*-------------Banner------------------*/
+
+.banner {
+    width: 100%;
+    height: auto;
+    margin-top: 79px; /* Adiciona um espaço superior para o banner */
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    /* Estilos para telas menores que 600px de largura */
+    .banner img {
+        max-width: 100%; /* O banner ocupará toda a largura disponível */
+        height: auto;
+    }
+}
+
+/* -----------------------------------------------------------------------*/
+
+
+
+
+
+.caixa1 {       
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+}
+.caixa2 {
+    position: relative; /* Adiciona posição relativa para que a sombra seja relativa a este elemento */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    width: 200px;
+    height: 380px;
+    overflow: hidden; /* Adicionando overflow para garantir que o conteúdo não saia do display */
+    background-color: rgba(226, 232, 240, 0.815);
+    border-radius: 10px;  
+    transition: transform 0.3s ease; /* Adiciona uma transição suave para a propriedade transform */    
+}
+.caixa2:hover {
+    box-shadow:  1px 1px 30px 5px rgba(188, 194, 202, 0.829); /* Adiciona sombra quando o mouse passa sobre o elemento */
+    transform: scale(1.1); /* Aplica um aumento de escala de 10% ao passar o mouse sobre a div */
+}
+.caixa2 img {
+    
+    max-width: 100%; /* Redimensiona a imagem para caber dentro do contêiner */
+    height: auto; /* Mantém a proporção original da imagem */
+    flex-direction: column; /* Define a direção do eixo principal como coluna */
+     }
+.caixa3 {    
+    margin: 15px;
+    text-align: center;
+    line-height: 1.3; /* 1.5 vezes a altura normal da linha */
+}
+.caixa3 h5 {
+    margin: 10px;
+     font-weight: 770;
+}
+.caixa3 p {
+    font-weight: 300;
+}
+.caixa2 .img3 {
+    margin-top: 140px; 
+}
+.caixa2 .img2 {
+    margin-top: 55px; 
+}
+.caixa2 .img1 {
+    margin-top: 85px; 
+}
+
+@media screen and (max-width: 768px) {
+    .caixa1,
+    .caixa2 {
+        width: 95%; /* Reduz a largura para 95% em telas menores */
+    }
+}
+
+
+/*-----------------------------------------------------------------------*/
+
+.corpo {
+    display: flex; /* Define o layout como flexível */
+    flex-wrap: wrap; /* Permite que os elementos sejam envolvidos em linhas */
+    max-width: 1050px; /* Define a largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo na página */
+    padding: 20px;
+}
+.corpo .ec {
+    text-align: center;
+}
+
+
+.m1 {
+    flex: 1; /* Define a div de texto como ocupando 1 unidade de espaço flexível */
+    padding: 20px; /* Adiciona um espaçamento interno à div de texto */
+    box-sizing: border-box; /* Garante que o preenchimento não aumente o tamanho total */
+}
+
+.m1 h1 {
+    text-align: center; /* Centraliza o título */
+}
+
+.m1 p {
+    text-align: justify; /* Justifica o texto */
+}
+
+.wrap {
+    text-align: center; /* Centraliza o botão */
+    margin-top: -130px; /* Adiciona um espaço entre o texto e o botão */
+}
+
+.box-left {
+    flex: 1; /* Define a caixa da imagem como ocupando 1 unidade de espaço flexível */
+    margin-top: 0px; /* Adiciona um espaço entre o botão e a imagem */
+    text-align: center; /* Centraliza a imagem */
+}
+
+.box-left img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho da caixa */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+@media only screen and (max-width: 600px) {
+    /* Estilos para telas menores que 600px de largura */
+    .corpo {
+        flex-direction: column; /* Alinha os elementos verticalmente */
+    }
+    .wrap {
+        margin-top: 20px;
+    }
+}
+/* ----------BOTÃO ------------  */
+.wrap {
+    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+
+    
+  }
+  
+  .button {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    min-height: 60px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 600;
+    color: #f9f9ff;
+    background: #19c402;
+  background: linear-gradient(90deg, rgb(11, 190, 20) 0%, rgb(0, 185, 0) 100%);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 3px 1px 19px 4px rgb(0, 255, 64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 1px;
+    
+    }
+    .button img {
+        width: 55px;
+        height: 55px;
+        margin-right: 0px;
+        
+    }
+  
+  button::before {
+  content: '';
+    border-radius: 10px;
+    min-width: calc(300px + 12px);
+    min-height: calc(60px + 12px);
+   border: 0px solid #19c402;
+    box-shadow: 0 0 60px rgb(25, 255, 4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+  }
+  
+  .button:hover, .button:focus {
+    color: #313133;
+    transform: translateY(-6px);
+  }
+  
+  button:hover::before, button:focus::before {
+    opacity: 1;
+  }
+  
+  button::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 6px solid #19c402;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.0s infinite;
+  }
+  
+  button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+  }
+  
+  @keyframes ring {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+    }
+  }
+/*----------------------------- */ 
+
+
+
+
+/* -------------------------------------------------------------*/
+
+.box-cont-mvv {
+    padding: 0 15px;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto 0
+}
+
+.box-cont-mvv .mvv-i {
+    width: 100%;
+    padding: 55px 0 75px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box
+}
+
+.box-cont-mvv .mvv-i .box-mvv {
+    position: relative;
+    padding: 0 50px 130px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center
+}
+
+@media only screen and (max-width: 123px) {
+    .box-cont-mvv .mvv-i .box-mvv {
+        padding:0 0 45px 0;
+        margin-bottom: 40px;
+        border-bottom-color: rgba(13, 47, 238, 0.3);
+        border-bottom-width: 3px;
+        border-bottom-style: dotted
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .box-cont-mvv .mvv-i .box-mvv {
+        flex-direction:column;
+        text-align: center
+    }
+}
+
+.box-cont-mvv .mvv-i .box-mvv:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 60px;
+    left: 145px;
+    z-index: 0;
+    width: 490px;
+    height: 60px;
+    border-radius: 0 0 0 30px;
+    -moz-border-radius: 0 0 0 30px;
+    -webkit-border-radius: 0 0 0 30px;
+    -ms-border-radius: 0 0 0 30px;
+    border-bottom-color: rgba(21, 13, 133, 0.973);
+    border-bottom-width: 3px;
+    border-bottom-style: dotted;
+    border-left-color: rgba(21, 13, 133, 0.973);
+    border-left-width: 3px;
+    border-left-style: dotted
+}
+
+@media only screen and (max-width: 1279px) {
+    .box-cont-mvv .mvv-i .box-mvv:before {
+        width:38%;
+        left: 11.7%
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .box-cont-mvv .mvv-i .box-mvv:before {
+        display:none
+    }
+}
+
+.box-cont-mvv .mvv-i .box-mvv:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 145px;
+    z-index: 0;
+    width: 490px;
+    height: 60px;
+    border-radius: 0 30px 0 0;
+    -moz-border-radius: 0 30px 0 0;
+    -webkit-border-radius: 0 30px 0 0;
+    -ms-border-radius: 0 30px 0 0;
+    border-top-color: rgba(21, 13, 133, 0.973);
+    border-top-width: 3px;
+    border-top-style: dotted;
+    border-right-color: rgba(21, 13, 133, 0.973);
+    border-right-width: 3px;
+    border-right-style: dotted
+}
+
+@media only screen and (max-width: 1279px) {
+    .box-cont-mvv .mvv-i .box-mvv:after {
+        width:38%;
+        right: 11.7%
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .box-cont-mvv .mvv-i .box-mvv:after {
+        display:none
+    }
+}
+
+.box-cont-mvv .mvv-i .box-mvv:nth-child(odd) img {
+    margin-right: 20px
+}
+
+.box-cont-mvv .mvv-i .box-mvv:nth-child(even) img {
+    margin-left: 20px
+}
+
+.box-cont-mvv .mvv-i .box-mvv:nth-child(1) img {
+    position: relative;
+    left: 33px;
+    bottom: -3px
+}
+
+@media (max-width: 768px) {
+    .box-cont-mvv .mvv-i .box-mvv:nth-child(1) img {
+        position:static
+    }
+}
+
+.box-cont-mvv .mvv-i .box-mvv:nth-child(2) img {
+    position: relative;
+    left: -40px;
+    bottom: 4px
+}
+
+@media (max-width: 768px) {
+    .box-cont-mvv .mvv-i .box-mvv:nth-child(2) img {
+        position:static
+    }
+}
+
+.box-cont-mvv .mvv-i .box-mvv:nth-child(3) img {
+    position: relative;
+    left: 37px;
+    bottom: 17px
+}
+
+@media (max-width: 768px) {
+    .box-cont-mvv .mvv-i .box-mvv:nth-child(3) img {
+        position:static
+    }
+}
+
+.box-cont-mvv .mvv-i .box-mvv figure {
+    margin-right: 50px
+}
+
+@media only screen and (max-width: 768px) {
+    .box-cont-mvv .mvv-i .box-mvv figure {
+        margin-right:0
+    }
+}
+
+.box-cont-mvv .mvv-i .box-mvv h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #070996
+}
+
+@media only screen and (max-width: 480px) {
+    .box-cont-mvv .mvv-i .box-mvv h2 {
+        font-size:35px
+    }
+}
+
+.box-cont-mvv .mvv-i .box-mvv p {
+    max-width: 713px;
+    font-size: 16px;
+    color: #212121
+}
+
+@media only screen and (max-width: 480px) {
+    .box-cont-mvv .mvv-i .box-mvv p {
+        font-size:14px
+    }
+}
+
+.box-cont-mvv .mvv-i .box-mvv:nth-child(even) {
+    flex-flow: row-reverse
+}
+
+@media only screen and (max-width: 768px) {
+    .box-cont-mvv .mvv-i .box-mvv:nth-child(even) {
+        flex-direction:column
+    }
+}
+
+.box-cont-mvv .mvv-i .box-mvv:nth-child(even) figure {
+    margin-right: 0;
+    margin-left: 50px
+}
+
+@media only screen and (max-width: 768px) {
+    .box-cont-mvv .mvv-i .box-mvv:nth-child(even) figure {
+        margin-left:0
+    }
+}
+
+.box-cont-mvv .mvv-i .box-mvv:nth-child(even) h2 {
+    text-align: right
+}
+
+@media only screen and (max-width: 768px) {
+    .box-cont-mvv .mvv-i .box-mvv:nth-child(even) h2 {
+        text-align:center
+    }
+}
+
+.box-cont-mvv .mvv-i .box-mvv:nth-child(even):before {
+    bottom: 0;
+    transform: scaleY(-1)
+}
+
+.box-cont-mvv .mvv-i .box-mvv:nth-child(even):after {
+    bottom: 60px;
+    transform: scaleY(-1)
+}
+
+.box-cont-mvv .mvv-i .box-mvv:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border: none
+}
+
+.box-cont-mvv .mvv-i .box-mvv:last-child:before,.box-cont-mvv .mvv-i .box-mvv:last-child:after {
+    display: none
+}
+
+.box-cont-mvv .mvv-i .box-mvv a {
+    width: 251px;
+    height: 48px;
+    background-color: #070996;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    padding-right: 55px;
+    position: relative;
+    transition: .3s all ease-out;
+    -moz-transition: .3s all ease-out;
+    -webkit-transition: .3s all ease-out;
+    -ms-transition: .3s all ease-out;
+    margin-top: 30px
+    
+}
+
+@media (max-width: 768px) {
+    .box-cont-mvv .mvv-i .box-mvv a {
+        margin:15px auto
+    }
+}
+
+.box-cont-mvv .mvv-i .box-mvv a:hover {
+    background-color: #000000
+}
+
+.box-cont-mvv .mvv-i .box-mvv a:before {
+    content: '\e93f';
+    font-family: 'icomoon';
+    font-size: 35px;
+    font-weight: normal;
+    line-height: 1;
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    z-index: 0
+}
+ 
+
+
+
+/* ----------fundo--------------------*/
+
+.destaque-menor-15 {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    background-image: linear-gradient(to right, #ffffff, #090de0d0, #010368, #010368);
+}
+
+.destaque-menor-15 .full-max {
+   
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 0 60px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    font-size: 15px
+    
+}
+
+@media (max-width: 480px) {
+    .destaque-menor-15 .full-max {
+        padding:80px 0
+    }
+}
+
+@media (max-width: 768px) {
+    .destaque-menor-15 .full-max {
+        flex-direction:column;
+        margin-left: 40px;
+        margin-right: 30px;
+    }
+}
+
+.destaque-menor-15 .full-max figure {
+    margin-right: 66px;
+    min-width: 460px;
+    max-width: 460px
+}
+
+@media (max-width: 1279px) {
+    .destaque-menor-15 .full-max figure {
+        min-width:40%;
+        margin-right: 36px
+    }
+}
+
+@media (max-width: 768px) {
+    .destaque-menor-15 .full-max figure {
+        margin-bottom:15px;
+        margin-right: 0
+    }
+}
+
+.destaque-menor-15 .full-max figure img {
+    width: 100%;
+    height: auto
+}
+
+.destaque-menor-15 .full-max h2 {
+    font-size: 45px;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+    font-weight: 700;
+    line-height: 1.1
+}
+
+@media (max-width: 1279px) {
+    .destaque-menor-15 .full-max h2 {
+        font-size:35px
+    }
+}
+
+@media (max-width: 1023px) {
+    .destaque-menor-15 .full-max h2 {
+        font-size:30px
+    }
+}
+
+@media (max-width: 768px) {
+    .destaque-menor-15 .full-max h2 {
+        margin-top:15px
+    }
+}
+
+@media (max-width: 480px) {
+    .destaque-menor-15 .full-max h2 {
+        font-size:25px
+    }
+}
+
+.destaque-menor-15 .full-max h3 {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700
+}
+
+.destaque-menor-15 .full-max span {
+    color: #FFFFFF;
+    line-height: 2;
+    margin-bottom: 30px;
+    display: table;
+}
+
+@media (max-width: 1023px) {
+    .destaque-menor-15 .full-max span {
+        margin:15px 0
+    }
+}
+
+
+
+@media (max-width: 1023px) {
+    .destaque-menor-15 .full-max a {
+        font-size:16px;
+        max-width: 350px;
+        margin: 0 auto
+    }
+}
+
+@media (max-width: 768px) {
+    .destaque-menor-15 .full-max a {
+        font-size:14px;
+        max-width: 300px
+    }
+}
+
+/* -------------------------------------------------------------*/
+
+
+footer {
+    background-color: #fff;
+    background-image: linear-gradient(to right, #ffffff, #090de0d0, #010368, #010368);
+    
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.rodape {
+    color: #fff;
+    text-align: center;
+    margin: 5px;
+    font-size: 12px;
+}
+/*-----------------------------------------------------*/
+.whatsapp-link {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 250px; /* Ajusta a distância do link do WhatsApp a partir da borda inferior */
+    right: 10px;
+    background-color: #00b843;
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 38px;
+    line-height: 60px; /* Centraliza verticalmente o ícone */
+    z-index: 1000;
+    box-shadow: 1px 0px 25px 5px rgba(16, 170, 2, 0.89);
+
+      
+}
+
+/*-------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
